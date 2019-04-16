@@ -1,0 +1,19 @@
+#! /bin/csh
+#
+# Usage: checkAseg sub1 sub2 sub3
+
+setenv SUBJECTS_DIR /Volumes/group/proc/TIGERanalysis/TIGER_FreeSurfer/TIGER_FS_subjDir
+set bin = /Volumes/group/proc/TIGERanalysis/TIGER_FreeSurfer/TIGER_FS_bin
+
+foreach sub ($argv)
+
+	echo "----------------------------------------------"
+	echo
+	echo "Checking Desikan-Killany surfaces for "$sub
+	echo
+	freeview -viewport 3d -zoom 1 -f $SUBJECTS_DIR/$sub/surf/lh.pial:annot=aparc.annot:name=pial_aparc \
+						$SUBJECTS_DIR/$sub/surf/rh.pial:annot=aparc.annot:name=pial_aparc &
+	echo
+	echo "----------------------------------------------"
+
+end
