@@ -1,0 +1,18 @@
+#! /bin/tcsh
+#
+# Usage: checkAseg sub1 sub2 sub3
+
+setenv SUBJECTS_DIR /Volumes/group/proc/TIGERanalysis/TIGER_FreeSurfer/TIGER_FS_subjDir
+set bin = /Volumes/group/proc/TIGERanalysis/TIGER_FreeSurfer/TIGER_FS_bin
+
+foreach sub ($argv)
+
+	echo "----------------------------------------------"
+	echo
+	echo "Checking Desikan-Killany segmentation for "$sub
+	echo
+	freeview -viewport z -zoom 1.45 -v $SUBJECTS_DIR/$sub/mri/brainmask.mgz -v $SUBJECTS_DIR/$sub/mri/aparc+aseg.mgz:colormap=lut:lut=$bin/lut.txt:opacity=.15 &
+	echo
+	echo "----------------------------------------------"
+
+end
