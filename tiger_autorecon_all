@@ -1,16 +1,18 @@
 #! /bin/csh
+#SBATCH --time=30:00:00
+#SBATCH --cpus-per-task=2
+#SBATCH --pty=bash
 
-# Usage: tigerautorecon origStudyFolder subjectFolder [subjectFolder subjectFolder...]
 
-setenv SUBJECTS_DIR /Volumes/group/proc/TIGERanalysis/TIGER_FreeSurfer/TIGER_FS_subjDir
+setenv SUBJECTS_DIR /oak/stanford/groups/iang/TIGER_data/TIGER_FreeSurfer/TIGER_FS_subjDir
 
 
-set fp = /Volumes/group/active/TIGER/TIGER-T1
+set fp = /oak/stanford/groups/iang/TIGER_data/TIGER-T1
 shift
 
-foreach sub ($argv)
+set sub = $argv
 
-set rawdata = /Volumes/group/active/TIGER/TIGER-T1/${sub}-T1/Ax_FSPGR_BRAVO_raw.nii.gz
+set rawdata = $fp/${sub}-T1/Ax_FSPGR_BRAVO_raw.nii.gz
 
 if (-e $rawdata) then
 	echo '****************************************************************** '
