@@ -1,0 +1,35 @@
+#! /bin/csh
+
+# Usage: tigerautorecon origStudyFolder subjectFolder [subjectFolder subjectFolder...]
+
+setenv SUBJECTS_DIR /Volumes/group/proc/TIGERanalysis/TIGER_FreeSurfer/TIGER_FS_subjDir
+
+
+set fp = /Volumes/group/active/TIGER/TIGER-T1
+shift
+
+foreach sub ($argv)
+
+set rawdata = /Volumes/group/active/TIGER/TIGER-T1/${sub}-T1/Ax_FSPGR_BRAVO_raw.nii.gz
+
+if (-e $rawdata) then
+	echo '****************************************************************** '
+	echo '****************************************************************** '
+	echo '***************** Working on subject '$sub'********************* '
+	echo '****************************************************************** '
+	echo '****************************************************************** '
+
+	recon-all -s ${sub}-T1 -i $rawdata -all
+
+	echo '****************************************************************** '
+	echo '****************************************************************** '
+	echo '****************** finished subject '$sub'********************** '
+	echo '****************************************************************** '
+	echo '****************************************************************** '
+else
+	echo
+	echo '>> WARNING:'$sub' Ax_FSPGR_BRAVO_raw.nii.gz not found <<'
+	echo '>> WARNING:'$sub' Ax_FSPGR_BRAVO_raw.nii.gz not found <<' >> $SUBJECTS_DIR/log.txt
+	echo
+endif
+end
