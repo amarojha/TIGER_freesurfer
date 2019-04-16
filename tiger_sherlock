@@ -1,0 +1,5 @@
+#!/bin/bash
+
+ml load biology
+ml load freesurfer/6.0.0
+./tiger_autorecon_all_sherlock.sh TIGER $1
