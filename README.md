@@ -16,6 +16,9 @@ This will run FreeSurfer recon-all for that subject, which takes ~7 hours. Note 
 
 Check to see if FreeSurfer is done running by going here to look for the subject: ```TIGER_data/TIGER_FreeSurfer/TIGER_FS_subjDir/```
 
+Additionally, you can check to see the status of your jobs on Sherlock using this command:
+```squeue -u SUNet```
+
 ## QCing subcortical autosegmentation ##
 
 ```cd /Volumes/group/proc/TIGERanalysis/TIGER_FreeSurfer/TIGER_FS_bin/```
