@@ -25,6 +25,8 @@ Additionally, you can check to see the status of your jobs on Sherlock using thi
 
 (XX=ID, TX= timepoint; e.g. 14-T1): ```./tiger_checkAseg.sh XX-TX```
 
+If you are interested in viewing 3D surface subcortical volumes, visit this link: https://surfer.nmr.mgh.harvard.edu/fswiki/FreeviewGuide/FreeviewWorkingWithData/FreeviewAnatomicalVolumes
+
 ## QCing cortical autosegmentation ##
 
 ```cd /Volumes/group/proc/TIGERanalysis/TIGER_FreeSurfer/TIGER_FS_bin/```
@@ -36,3 +38,5 @@ Additionally, you can check to see the status of your jobs on Sherlock using thi
 ```cd /Volumes/group/proc/TIGERanalysis/TIGER_FreeSurfer/TIGER_FS_bin/```
 
 ```./tiger_checkDesikanSurf XX-TX```
+
+
