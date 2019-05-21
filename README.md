@@ -27,6 +27,37 @@ Additionally, you can check to see the status of your jobs on Sherlock using thi
 
 If you are interested in viewing 3D surface subcortical volumes, visit this link: https://surfer.nmr.mgh.harvard.edu/fswiki/FreeviewGuide/FreeviewWorkingWithData/FreeviewAnatomicalVolumes
 
+### Notes about subcortical QCing ###
+
+**NOTE:** right/left are flipped when viewing structures in FSLeyes
+
+- lateral ventricles: these are always good unless they have a 5th ventricle, in which case you should exclude the person
+
+- cerebellum: look for WM coverage - if that's bad, both GM/WM are not usable; make sure it's fully covered
+
+- thalamus: large green structure in center; usually messy but ok
+
+- lat. DC: reddish-pink structure immersed in thalamus; almost always good
+
+- caudate: blue0gray above the lat. DC
+
+- putamen: pink, shouldn't touch gray matter too much; should be roundish; shouldn't be concave/"C" shaped
+
+- pallidum: more medial (blue) adjacent putamen
+
+- NAcc: gold, little more anterior
+
+- hippocampus: greenish-yellow, use axial view; check that left hippo doesn't overextend
+
+- amygdala: almost always fine; make sure it doesn't go into hippo's space (blue), anterior to hippo, fairly ventral
+
+**GENERAL NOTES:** spend most time in sagittal view; the left side usually has more issues; regions may be funky when they come in or fade out but that's ok.
+
+Once you are done with QCing in Excel, use the "pull FS volumes" script, changing the paths to reflect TIGER
+
+You'll need Matlab 2015a for ebst results; try to do them in smaller batches
+
+
 ## QCing cortical autosegmentation ##
 
 ```cd /Volumes/group/proc/TIGERanalysis/TIGER_FreeSurfer/TIGER_FS_bin/```
