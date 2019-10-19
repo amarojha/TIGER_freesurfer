@@ -32,6 +32,7 @@ NOTE: you may get a message saying ```freeview command not found```
 This denotes that your terminal is not pointing to the FreeSurferSetup script. You can enter the following manually to dix for this:
 
 ```export FREESURFER_HOME=/Applications/freesurfer```
+
 ```source $FREESURFER_HOME=/SetUpFreeSurfer.sh```
 
 If this does not work then you can try running the SetUpFreeSurfer script by hand in terminal:
