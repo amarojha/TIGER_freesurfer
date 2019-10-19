@@ -27,6 +27,38 @@ Additionally, you can check to see the status of your jobs on Sherlock using thi
 
 If you are interested in viewing 3D surface subcortical volumes, visit this link: https://surfer.nmr.mgh.harvard.edu/fswiki/FreeviewGuide/FreeviewWorkingWithData/FreeviewAnatomicalVolumes
 
+NOTE: you may get a message saying ```freeview command not found```
+
+This denotes that your terminal is not pointing to the FreeSurferSetup script. You can enter the following manually to dix for this:
+
+```export FREESURFER_HOME=/Applications/freesurfer```
+```source $FREESURFER_HOME=/SetUpFreeSurfer.sh```
+
+If this does not work then you can try running the SetUpFreeSurfer script by hand in terminal:
+
+```
+if [ -z $FREESURFER_HOME ]; then
+    echo " ERROR: Environment variable FREESURFER_HOME must be defined prior to sourcing Freesurfer." 
+    return
+fi
+```
+
+```
+if [ -z $SUBJECTS_DIR ]; then
+    export SUBJECTS_DIR=$FREESURFER_HOME/subjects
+fi
+```
+
+```
+if [ -z $FUNCTIONALS_DIR ]; then
+    export FUNCTIONALS_DIR=$FREESURFER_HOME/sessions
+fi
+```
+
+```
+source $FREESURFER_HOME/FreeSurferEnv.sh
+```
+
 ### Notes about subcortical QCing ###
 
 **NOTE:** right/left are flipped when viewing structures in FSLeyes
